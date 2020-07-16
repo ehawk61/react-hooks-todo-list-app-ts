@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import TodoListApp from './components/todoListApp'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('renders todo text box in form', () =>{
+  const { getByTestId } = render(<TodoListApp />)
+  const todoTextBox = getByTestId(/todo-list/i)
+  expect(todoTextBox).toBeInTheDocument();
+})
